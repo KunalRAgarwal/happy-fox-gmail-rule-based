@@ -1,0 +1,25 @@
+{
+  "rules": [
+    {
+      "predicate": "all",
+      "conditions": [
+        {"field": "subject", "predicate": "contains", "value": "UPI"}
+      ],
+      "actions": [
+        {"action": "mark_as_read"},
+        {"action": "move_message", "label": "Work"}
+      ]
+    },
+    {
+      "predicate": "any",
+      "conditions": [
+        {"field": "subject", "predicate": "contains", "value": "Job Alert"},
+        {"field": "message_snippet", "predicate": "contains", "value": "response needed"},
+        {"field": "sender", "predicate": "equals", "value": "recruiter@example.com"}
+      ],
+      "actions": [
+        {"action": "mark_as_read"}
+      ]
+    }
+  ]
+}
